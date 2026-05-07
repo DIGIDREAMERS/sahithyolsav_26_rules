@@ -194,33 +194,59 @@ general:[
 };
 
 function loadPrograms(){
-let cat = category.value;
-programList.innerHTML="";
-if(!data[cat]) return;
+  const cat = document.getElementById("category").value;
+  const list = document.getElementById("programList");
 
-data[cat].forEach(p=>{
-let btn=document.createElement("button");
-btn.innerText=p[1];
-btn.onclick=()=>show(p);
-programList.appendChild(btn);
-});
+  list.innerHTML = "";
+
+  if(!data[cat]) return;
+
+  data[cat].forEach(p=>{
+    let btn = document.createElement("button");
+    btn.innerText = p[1]; // only Malayalam name
+    btn.onclick = () => show(p);
+    list.appendChild(btn);
+  });
 }
 
 function show(p){
-form.classList.add("hidden");
-result.classList.remove("hidden");
+  form.classList.add("hidden");
+  result.classList.remove("hidden");
 
-programTitle.innerText=p[1];
-time.innerText="⏱️ സമയം: "+p[2];
+  const cat = document.getElementById("category").value;
 
-let topic="images/topic/"+p[0]+".png";
-let rule="images/rule/"+p[0]+".png";
+  programTitle.innerText = p[1];
+  time.innerText = "⏱️ സമയം: " + p[2];
 
-topicImg.src=topic;
-topicDownload.href=topic;
+  // TOPIC
+  let topic = "images/topic/" + cat + "_" + p[0] + ".png";
 
-ruleImg.src=rule;
-ruleDownload.href=rule;
+  // RULE
+  let rule = "images/rule/" + p[0] + ".png";
+
+  topicImg.src = topic;
+  topicDownload.href = topic;
+
+  ruleImg.src = rule;
+  ruleDownload.href = rule;
+
+  // fallback
+  topicImg.onerror = () => {
+    topicImg.src = "images/no-topic.png";
+  };
+
+  ruleImg.onerror = () => {
+    ruleImg.src = "images/no-rule.png";
+  };
+}
+
+function filterPrograms(){
+  const text = document.getElementById("search").value.toLowerCase();
+  const buttons = document.querySelectorAll("#programList button");
+
+  buttons.forEach(btn=>{
+    btn.style.display = btn.innerText.toLowerCase().includes(text) ? "block" : "none";
+  });
 }
 
 function goBack(){
