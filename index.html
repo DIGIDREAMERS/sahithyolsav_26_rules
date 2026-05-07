@@ -18,16 +18,26 @@
 </audio>
 
 <section id="home">
-  <div class="card">
-    <h1> സാഹിത്യോത്സവ് 26 നിയമങ്ങൾ</h1>
-    <button onclick="start()">നിയമങ്ങൾ കാണുക</button>
+  <div class="card home-card">
+
+
+<img src="images/sahi_logo.png" class="logo">
+
+<img src="images/sahi_eng_typo.png" class="title-img">
+
+<h2>സാഹിത്യോത്സവ് 2026 നിയമങ്ങൾ</h2>
+
+<button onclick="start()">നിയമങ്ങൾ കാണുക</button>
+
+
   </div>
 </section>
+
 
 <section id="form" class="hidden">
   <div class="card">
 
-```
+
 <input id="name" placeholder="പേര് (ഐച്ഛികം)">
 
 <select id="category" onchange="loadPrograms()">
@@ -49,9 +59,9 @@
   <option value="senior">സീനിയർ</option>
   <option value="general">ജനറൽ</option>
 </select>
-
+<input id="search" placeholder="തിരയുക" oninput="filterPrograms()">
 <div id="programList"></div>
-```
+
 
   </div>
 </section>
@@ -59,20 +69,20 @@
 <section id="result" class="hidden">
   <div class="card">
 
-```
+
 <h2 id="programTitle"></h2>
 <p id="time"></p>
 
 <h3>📌 വിഷയം</h3>
 <img id="topicImg">
-<a id="topicDownload" class="download" download>⬇️ ഡൗൺലോഡ്</a>
+<a id="topicDownload" class="download" download>ഡൗൺലോഡ്</a>
 
 <h3>📜 നിയമങ്ങൾ</h3>
 <img id="ruleImg">
-<a id="ruleDownload" class="download" download>⬇️ ഡൗൺലോഡ്</a>
+<a id="ruleDownload" class="download" download>ഡൗൺലോഡ്</a>
 
-<button onclick="goBack()">⬅️ തിരികെ</button>
-```
+<button onclick="goBack()">തിരികെ</button>
+
 
   </div>
 </section>
