@@ -115,3 +115,40 @@ display:none;
 section {
   transition: all 0.3s ease;
 }
+
+/* ===== TOP HEADER ===== */
+.topbar {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 60px;
+background: rgba(255,255,255,0.9);
+backdrop-filter: blur(10px);
+z-index: 1000;
+}
+
+.topbar-content {
+max-width: 420px;
+margin: auto;
+height: 100%;
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 0 15px;
+}
+
+/* Logo left */
+.logo-top {
+width: 35px;
+}
+
+/* Typo right */
+.title-top {
+height: 24px;
+}
+
+/* Push content below header */
+section {
+padding-top: 80px;
+}
