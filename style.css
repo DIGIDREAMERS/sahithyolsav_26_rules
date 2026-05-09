@@ -153,34 +153,31 @@ section {
 padding-top: 80px;
 }
 
-/* Header layout */
+/* ===== HEADER ===== */
 .header {
-display: flex;
-align-items: center;
-justify-content: flex-start;
-gap: 12px;
-margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  background: rgba(255,255,255,0.65); /* semi transparent */
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 15px;
+  z-index: 1000;
 }
 
 /* Logo */
-.logo {
-width: 70px;
-height: auto;
+.header .logo {
+  width: 35px;
 }
 
-/* Typography image */
-.title-img {
-width: 160px;
-height: auto;
-}
-
-/* 📱 Mobile adjustments */
-@media (max-width: 480px) {
-.logo {
-width: 55px;
-}
-
-.title-img {
-width: 130px;
-}
+/* Typo */
+.header .title-img {
+  height: 24px;
 }
