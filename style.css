@@ -13,18 +13,19 @@ color:#222;
 
 /* Layout */
 section {
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  padding: 80px 20px 20px; /* push below header */
 }
 
 /* Card */
 .card {
 width:100%;
 max-width:420px;
-background:rgba(255,255,255,0.75);
+background: rgba(255,255,255,0.7);
 backdrop-filter:blur(14px);
 border-radius:20px;
 padding:25px;
