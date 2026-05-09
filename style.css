@@ -152,3 +152,35 @@ height: 24px;
 section {
 padding-top: 80px;
 }
+
+/* Header layout */
+.header {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+gap: 12px;
+margin-bottom: 20px;
+}
+
+/* Logo */
+.logo {
+width: 70px;
+height: auto;
+}
+
+/* Typography image */
+.title-img {
+width: 160px;
+height: auto;
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 480px) {
+.logo {
+width: 55px;
+}
+
+.title-img {
+width: 130px;
+}
+}
